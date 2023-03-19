@@ -3,7 +3,7 @@ from gtts import gTTS
 import os
 
 #set your OpenAI API key
-openai.api_key="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"
+openai.api_key={your openai key}
 while True:
     print('type to chat:')
     chat=input()
