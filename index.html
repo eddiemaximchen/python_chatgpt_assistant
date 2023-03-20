@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>chatGPT</title>
+    <style>
+        input{
+            width: 10cm;
+            height: 1cm;
+        }
+        button{
+            width: 3cm;
+            height: 1cm;
+        }
+        p{
+            font-size: 0.8cm;
+            color:blue;
+        }
+        img{
+            width: 200px;
+            height:300px;
+        }
+    </style>
+    <img src="role.png">
+</head>
+<body background="https://user-images.githubusercontent.com/122704850/226396836-8f67c7b1-c937-4046-982d-ec682041c2b8.png"> 
+    <p>After the question disappear,please wait about 10secs before you hit play</p>
+    <input id="ask" ></input><button id="chat">Chat</button>
+    <audio id="ans" src="test.mp3"></audio>
+    <button onclick="load()">play</button>
+    <script>
+        var ask=document.querySelector('input#ask')
+        document.querySelector('button#chat').addEventListener('mousedown', function(event){fetch('http://localhost:5000/chat/'+ask.value)})
+        var qq=document.querySelector("audio#ans")
+        //要先load完才能play
+        function load(){
+            qq.load();
+            setTimeout("play()",5000)
+        }
+        function play(){
+            qq.play();
+        }
+    </script>
+</body>
+</html>
