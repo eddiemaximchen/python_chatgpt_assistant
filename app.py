@@ -9,7 +9,7 @@ app = Flask(__name__)
 @app.route('/chat',defaults={'chat':'Hello'})
 @app.route('/chat/<chat>')
 def chat(chat):
-    openai.api_key="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"
+    openai.api_key={your api key}
     response=openai.ChatCompletion.create(
     model="gpt-3.5-turbo",
     messages=[
